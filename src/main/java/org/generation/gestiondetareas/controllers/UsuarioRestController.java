@@ -27,6 +27,13 @@ public class UsuarioRestController {
         return usuarioElegido;
     }
 
+    @GetMapping("/{id}")
+    public Usuario buscarUsuarioPorId(@PathVariable Long id) {
+        Usuario usuarioMostrar = usuarioService.buscarUsuarioPorId(id);
+        return usuarioMostrar;
+    }
+
+
     @PostMapping("/nuevo")
     public Usuario guardarNuevoUsuario(@RequestBody Usuario usuarioNuevo) {
         Usuario usuarioParaGuardar = usuarioService.guardarUsuario(usuarioNuevo);
